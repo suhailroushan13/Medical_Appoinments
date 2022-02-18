@@ -1,0 +1,148 @@
+{% load staticfiles %}
+<!doctype html>
+<html lang="en" class="no-js">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="canonical" href="https://html5-templates.com/" />
+    <title>Admin Home</title>
+    <meta name="description" content="Simplified Bootstrap template with sticky menu">
+    <link href="{% static 'css/bootstrap.min.css' %}" rel="stylesheet">
+    <link href="{% static 'css/sticky-menu.css' %}" rel="stylesheet">
+</head>
+<body id="page-top" data-spy="scroll" data-target=".navbar-fixed-top">
+    <nav class="navbar navbar-default navbar-fixed-top" role="navigation">
+        <div class="container">
+            <div class="navbar-header page-scroll">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse">
+                    <span class="sr-only">Toggle menu</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand page-scroll"><b><h3>Welcome Admin</h3></b></a>
+            </div>
+
+            <div class="collapse navbar-collapse navbar-ex1-collapse">
+                <ul class="nav navbar-nav">
+                    <li class="hidden">
+                        <a class="page-scroll" href="#page-top"></a>
+                    </li>
+                    <li>
+                        <a class="page-scroll" href="{% url 'user_requests' %}"><b><h3>User Requets</h3></b></a>
+                    </li>
+                    <li>
+                                                <a class="page-scroll" href="{% url 'user_info' %}"><b><h3>Users Information</h3></b></a>
+
+                    </li>
+                    <li>
+                    </li>
+                    <li>
+                        <a class="page-scroll" href="{% url 'admin_logout' %}"><b><h3>Logout</h3></b></a>
+                    </li>
+                </ul>
+
+            </div>
+        {% if data %}
+            <center>
+            <h2 style="color:red;">{{ data }}</h2>
+            </center>
+        {% endif %}
+            {% if Udata %}
+                <br>
+                <br>
+                    <table align="center" border="2" bgcolor="black">
+                    <tr>
+                        <th>
+                            User Id
+                        </th>
+                        <th>
+                            User Name
+                        </th>
+                        <th>
+                            Email
+                        </th>
+                        <th>
+                            Current Address
+                        </th>
+                        <th>Status</th>
+                        <th>Approve</th>
+                        <th>Decline</th>
+                    </tr>
+                    {% for x in Udata %}
+                        <tr>
+                        <th>
+                            {{ x.idno }}
+                        </th>
+                        <th>
+                            {{ x.user_name }}
+                        </th>
+                        <th>
+                            {{ x.email }}
+                        </th>
+                        <th>
+                            {{ x.current_address }}
+                        </th>
+                        <th>
+                            {{ x.status }}
+                        </th>
+                            <th><a href="{% url 'approve_user' x.idno %}">YES</a></th>
+                            <th><a href="{% url 'decline_user' x.idno %}">YES</a></th>
+
+                        </tr>
+                    {% endfor %}
+                    </table>
+
+                {% endif %}
+      {% if uidata %}
+                <br>
+                <br>
+                    <table align="center" border="2" bgcolor="black">
+                    <tr>
+                        <th>
+                            User Id
+                        </th>
+                        <th>
+                            User Name
+                        </th>
+                        <th>
+                            Email
+                        </th>
+                        <th>
+                            Current Address
+                        </th>
+                        <th>Status</th>
+                    </tr>
+                    {% for x in uidata %}
+                        <tr>
+                        <th>
+                            {{ x.idno }}
+                        </th>
+                        <th>
+                            {{ x.user_name }}
+                        </th>
+                        <th>
+                            {{ x.email }}
+                        </th>
+                        <th>
+                            {{ x.current_address }}
+                        </th>
+                        <th>
+                            {{ x.status }}
+                        </th>
+
+                        </tr>
+                    {% endfor %}
+                    </table>
+                {% else %}
+                <center>
+                    <h2 style="color:red;">No pending Data</h2>
+                </center>
+                {% endif %}
+        </div>		<!-- .container -->
+    </nav>
+
+</body>
+
+</html>

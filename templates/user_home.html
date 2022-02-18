@@ -1,0 +1,86 @@
+{% load staticfiles %}
+<!doctype html>
+<html lang="en" class="no-js">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="canonical" href="https://html5-templates.com/" />
+    <title>user_home</title>
+    <meta name="description" content="Simplified Bootstrap template with sticky menu">
+    <link href="{% static 'css/bootstrap.min.css' %}" rel="stylesheet">
+    <link href="{% static 'css/sticky-menu.css' %}" rel="stylesheet">
+</head>
+<body id="page-top" data-spy="scroll" data-target=".navbar-fixed-top">
+    <nav class="navbar navbar-default navbar-fixed-top" role="navigation">
+        <div class="container">
+            <div class="navbar-header page-scroll">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse">
+                    <span class="sr-only">Toggle menu</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand page-scroll" ><b><h3 style="color:red">Welcome {{ name }}</h3></b></a>
+            </div>
+
+            <div class="collapse navbar-collapse navbar-ex1-collapse">
+                <ul class="nav navbar-nav">
+                    <li class="hidden">
+                        <a class="page-scroll" href="#page-top"></a>
+                    </li>
+                   <li>
+                        <a class="page-scroll" href="/show/"><b><h3 style="color:red">Check  showed up or not</h3></b></a>
+                    </li>
+                    <li>
+                        <a class="page-scroll" href="{% url 'logistic' %}?algo='logistic'"><b><h3 style="color:red">Logistic Regression</h3></b></a>
+                    </li>
+                        <li>
+                        <a class="page-scroll" href="{% url 'forest' %}?algo='forest'"><b><h3 style="color:red">Random Forest </h3></b></a>
+                    </li>
+                    <li>
+                        <a class="page-scroll" href="{% url 'tree' %}?algo='tree'"><b><h3 style="color:red">Decision Tree </h3></b></a>
+                    </li>
+
+                    <li>
+                        <a class="page-scroll" href="{% url 'user_logout' %}"><b><h3 style="color:red">Logout</h3></b></a>
+                    </li>
+                </ul>
+
+                {% if algo_name %}
+                    <br>
+                    <br>
+                    <center>
+                    <h1>
+                        Algorithm:{{ algo_name }}<br><br>
+                        Accuracy:{{ accuracy }}%<br><br>
+                        Precision:{{ precision }}
+
+
+                    </h1>
+                    </center>
+                {% endif %}
+            </div>
+<br><br>
+
+</form>
+
+
+            <!-- .navbar-collapse -->
+
+        </div>		<!-- .container -->
+    </nav>
+
+    <!-- jQuery -->
+    <script src="js/jquery.js"></script>
+
+    <!-- Bootstrap Core JavaScript -->
+    <script src="js/bootstrap.min.js"></script>
+
+    <!-- Scrolling Nav JavaScript -->
+    <script src="js/jquery.easing.min.js"></script>
+    <script src="js/sticky-menu.js"></script>
+
+</body>
+
+</html>

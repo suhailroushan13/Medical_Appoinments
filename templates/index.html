@@ -1,0 +1,123 @@
+{% load staticfiles %}
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Medical Appointment</title>
+	<!-- Bootstrap CSS -->
+	<link rel="stylesheet" type="text/css" href="{% static 'css/bootstrap.min.css' %}">
+
+	<!-- Goggle Font -->
+	<link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=Roboto:400,100,300,500">
+
+	<!-- Font Css -->
+	<link rel="stylesheet" type="text/css" href="{% static 'css/font-awesome.min.css' %}">
+
+	<!-- Custom CSS -->
+	<link rel="stylesheet" type="text/css" href="{% static 'css/style.css' %}">
+
+	<!-- Animation Css -->
+	<link rel="stylesheet" href="css/animate.css">
+
+
+</head>
+<body>
+<!-- Header -->
+<div class="header-div">
+
+<nav class="navbar navbar-default">
+  <div class="container">
+    <!-- Brand and toggle get grouped for better mobile display -->
+    <div class="navbar-header logo-div bounceInLeft wow" data-wow-duration="2s">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="#">Medical Appointments</a>
+    </div>
+    <!-- Collect the nav links, forms, and other content for toggling -->
+    <div class="collapse navbar-collapse top-right-menu-ul bounceInRight wow" id="bs-example-navbar-collapse-1" data-wow-duration="4s">
+      <ul class="nav navbar-nav navbar-right">
+        <li><a href="{% url 'admin_login' %}">Admin</a></li>
+        <li><a href="{% url 'user_login' %}">Users</a></li>
+        <li><a href="#About">About Us</a></li>
+        <li><a href="">Home</a></li>
+      </ul>
+    </div><!-- End navbar-collapse -->
+  </div><!-- End container -->
+</nav>
+
+<div class="container wow bounceInDown" data-wow-duration="5s">
+	<div class="row">
+		<div class="col-md-offset-2 col-md-8 text-center slide-text">
+			<h1>Medical Appointments</h1>
+<p>A recurring problem in the area of public health is the high rate of
+patients who do not attend scheduled medical examinations and consultations.
+Absenteeism from previously scheduled appointments compromises the
+effectiveness of medical care and generates a series of problems in the public
+health system, such as long waiting lines for care, lack of resources to meet
+demand and high financial loss, by paying a professional who will be idle due
+to the absence of patients. Thus, this study aims to explore different models of
+machine learning in order to help predict whether the patient will attend the
+scheduled appointment or not.</p>
+        </div><!-- End col-md-8-->
+		<div class="col-md-offset-2"></div><!-- End col-md-offset-2 -->
+	</div><!-- End Row -->
+</div><!-- End Contanier -->
+
+</div><!-- End header-div -->
+
+
+
+
+<!-- About -->
+<div class="container" id="About">
+	<div class="row">
+		<div class="col-md-12">
+			<div class="main_heading">
+				<h1>About us</h1>
+				<div  class="text-center"><span class="underline"></span></div>
+			</div>
+		</div><!-- End col-md-12 -->
+	</div><!-- End row -->
+
+
+<p>
+    A recurring problem in the area of public health is the high rate of
+patients who do not attend scheduled medical examinations and
+consultations. In addition to not attending diagnostic support tests,
+absenteeism reaches a global prevalence of around 25% in specialized
+outpatient clinics [1]. The investigation of the main reasons for
+absenteeism in medical appointments is a fundamental factor for
+continued health care, for improving access to the public health system,
+for controlling waiting lines and improving the quality of life of the population. Absenteeism from previously
+scheduled appointments compromises the effectiveness of medical
+care and creates a series of problems in public health systems around
+the world. Studies have identified long waiting times for health care as
+one of the main challenges facing the system [2], [3] [4]. A public
+opinion poll in Canada [4] showed that 75% of respondents identified
+reducing the waiting list as a high priority action. Some studies
+recommend solving the problem by increasing resources as described
+by Hoe [5] and Santibãnez and Chow [6], while other studies show that
+the modernization of the process would lead to improvements, as
+described by Lu, Li and Gisler [7] and Recht et al [8].
+</p>
+
+</div><!-- End container -->
+<!-- End About -->
+
+
+
+
+
+<script type="text/javascript" src="{% static 'js/jquery-main.js' %}"></script>
+<script type="text/javascript" src="{% static 'js/bootstrap.min.js' %}"></script>
+<script src="{% static 'js/wow.min.js' %}"></script>
+
+<script>
+	new WOW().init();
+</script>
+
+</body>
+</html>
